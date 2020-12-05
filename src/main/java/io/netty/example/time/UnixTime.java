@@ -1,5 +1,7 @@
 package io.netty.example.time;
 
+import java.util.Date;
+
 public class UnixTime {
 
     private final long value;
@@ -19,6 +21,6 @@ public class UnixTime {
 
     @Override
     public String toString() {
-        return super.toString();
+        return new Date((value() - 2208988800L) * 1000L).toString();
     }
 }
