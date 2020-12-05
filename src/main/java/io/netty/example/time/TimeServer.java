@@ -27,7 +27,7 @@ public class TimeServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            socketChannel.pipeline().addLast(new TimeServerHandler());
+                            socketChannel.pipeline().addLast(new TimeEncoder(), new TimeServerHandler());
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)
