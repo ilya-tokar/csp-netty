@@ -6,7 +6,6 @@ public class UnixTime {
 
     private final long value;
 
-
     public UnixTime() {
         this(System.currentTimeMillis() / 1000L + 2208988800L);
     }
